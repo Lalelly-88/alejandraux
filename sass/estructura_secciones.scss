@@ -1,0 +1,556 @@
+@import 'variables';
+@import 'animaciones';
+
+//Inicio de estilos sobre mi
+//Sobre mi flex
+
+.fotomia__mobile{
+    display: none;
+}
+.sobremi{
+    max-width: 87.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 6rem;
+    .sobremi__info{
+        width: 50%;
+        margin: 0 4rem;
+    }
+    .sobremi__rectangulo_a{
+        display: flex;
+        width: 50%;
+        height: 45rem;
+        background-color: $branding-amarillo-transp;
+        justify-content: center;
+        align-items: center;
+    }
+    div.sobremi__info__boton{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+//Sobre mi responsivo
+@media screen and ( max-width: 1280px) {
+    .sobremi{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6rem;
+        .sobremi__info{
+            width: 50%;
+            margin: 0 2rem;
+            padding: 0 2rem;
+        }
+        .sobremi__rectangulo_a{
+            width: 50%;
+            height: 50rem;
+            img{
+                width: 80%;
+                height: auto;
+            }
+        }
+        div.sobremi__info__boton{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }    
+    }
+}
+
+@media screen and ( max-width: 1118px) {
+    .sobremi{
+        .sobremi__info{
+            width: 55%;
+            padding: 0 1rem;
+        }
+        .sobremi__rectangulo_a{
+            width: 45%;
+            height: 40rem;
+        }
+    }
+}
+
+@media screen and ( max-width: 918px) {
+    .fotomia__desktop{
+        display: none;
+    }
+    .fotomia__mobile{
+        display: block;
+    }
+
+    .sobremi{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .sobremi__rectangulo_a{
+            .fotomia__mobile{
+                width: auto;
+            }
+        }
+        .sobremi__info{
+            width: 100%;
+            padding: 0 5rem;
+            h1, h2{
+                text-align: center;
+            }
+            p{
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+        }
+        .sobremi__rectangulo_a{
+            order: 2;
+            width: 100%;
+            height: 20rem;
+        }
+        div.sobremi__info__boton{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 2rem;
+        }    
+        a{
+            margin: 1rem 0;
+        }
+    }
+}
+
+@media screen and ( max-width: 500px) {
+    .sobremi{
+        .sobremi__info{
+            padding: 0 2rem;
+        }
+    }
+    .sobremi__habilidades__article__soft{
+        margin-left: 1rem;
+    }
+}
+
+
+//habilidades flex
+.sobremi__habilidades__div{
+    max-width: 87.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2rem;
+    .sobremi__habilidades__article__soft{
+        .sobremi__habilidades__ul{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    .sobremi__habilidades__article__hard{
+        .sobremi__habilidades__ul{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+//habilidades responsivo    
+@media screen and ( max-width: 1000px) {
+    .sobremi__habilidades__div{
+        display: flex;
+        flex-direction: column;
+    }
+    .sobremi__habilidades__titulo__h3{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+//Fin de estilos sobre mi
+
+
+//Inicio experiencia y formacion
+//Experiencia
+
+.experiencia__mobile{
+    text-align: center;
+}
+input.experiencia__elemento__input {
+    display: none;
+    visibility: hidden;
+  }
+
+  .experiencia__elemento__labelm{
+        margin-top: 0.3rem;
+        margin-bottom: 1.5rem;
+        color: $branding-azul;
+        border-bottom: 0.3rem $secundarios-amarillo solid;
+        @include tipo (1.2rem, 500); 
+        display: block;   
+  }
+
+.experiencia__elemento__label{
+    margin-bottom: 0.5rem;
+    color: $grises-negro;
+    @include tipo (1.2rem, 500); 
+    display: block;
+    padding-bottom: 1rem;
+    &:hover{
+        color:$secundarios-azul;
+      }
+    &::before{
+    content: "-";
+    vertical-align: text-top;
+    display: inline-block;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: radial-gradient(ellipse at center, $secundarios-amarillo 50%, transparent 50%);
+    }
+}
+
+.experiencia__elemento__p{
+    font-size: 1rem;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+.experiencia__elemento__p__fecha{
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+.boton3{
+    margin-bottom: 1rem;
+}
+
+.experiencia__elemento__ul{
+    color: $grises-negro;
+    li{
+        padding-bottom: 1rem;
+    }
+}
+
+#toggle:checked ~ #expand, #toggle1:checked ~ #expand1, #toggle2:checked ~ #expand2{
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+#toggle:checked ~ label::before, #toggle1:checked ~ label::before, #toggle2:checked ~ label::before{
+    content: "+";
+}
+
+#toggle3:checked ~ #expand3, #toggle4:checked ~ #expand4, #toggle5:checked ~ #expand5{
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+#toggle3:checked ~ label::before, #toggle4:checked ~ label::before, #toggle5:checked ~ label::before{
+    content: "+";
+}
+
+//inicio formacion academica
+
+// Experiencia flex
+.experiencia__mobilef{
+    display: none;
+}
+
+.experienciaf{
+    max-width: 87.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    .experiencia__elementosf{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .experiencia__elementof{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width: 850px) {
+    section.experienciaf{
+        display: none;
+    }
+    .experiencia__mobilef{
+        display: block;
+    }
+    
+    .experienciaf{
+        .experiencia__elementosf{
+            .experiencia__elementof{
+                margin: 2rem 0rem;
+                align-items: center;
+            }    
+        }    
+    }
+}
+
+
+//inicio formacion academica
+
+// Portafolio flex
+.experiencia__mobilep{
+    display: none;
+}
+
+.portafolio__contenedor{
+    max-width: 87.5rem;
+    margin: auto;
+}
+
+.experienciap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    .experiencia__elementosp{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and ( max-width: 850px) {
+    section.experienciap{
+        display: none;
+    }
+    .experiencia__mobilep{
+        display: block;
+    }
+    
+    .experienciap{
+        .experiencia__elementospp{
+            .experiencia__elementop{
+                margin: 2rem 0rem;
+                align-items: center;
+            }    
+        }    
+    }
+}
+
+
+//Inicio contactos
+.contacto__titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    .contacto__titulo__img{
+        width: 30%;
+        height: 4rem;
+        background-color: $secundarios-azul;
+    }
+    .contacto__titulo__h3{
+        width: 40%;
+        text-align: center;
+        padding: 0 0.2rem;
+    }
+}
+
+.contacto{
+    max-width: 87.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+
+    .contacto__info{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    .contacto__formulario{
+        width: 55%;
+        padding: 2rem 5rem;
+        background-color: $secundarios-amarillo;
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea{
+          border: none;
+          outline: 0;
+          padding: 1rem;
+          width: 100%;
+          background-color: $blanco;          
+          margin-bottom: 1.5rem;
+        }
+        textarea{
+            height: 6rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: $branding-azul;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        input:focus-within, textarea:focus-within {
+            border: 0.13rem $branding-azul solid;
+            color: $branding-azul;
+            font-size: 1rem;
+        }
+        button {
+            width: 100%;
+            border: none;
+         }
+    }
+}
+
+// Contacto responsivo
+@media screen and ( max-width: 1280px) {
+    .contacto__titulo{
+        .contacto__titulo__img{
+            width: 20%;
+        }
+        .contacto__titulo__h3{
+            width: 60%;
+        }
+    }
+}
+
+@media screen and ( max-width: 1009px) {
+    .contacto__titulo{
+        margin-bottom: 1rem;
+    }
+    .contacto{        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .contacto__info{
+            align-items: center;
+            text-align: center;
+            width: 80%;
+        }
+        .contacto__formulario{
+            width: 100%;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+}
+
+@media screen and ( max-width: 650px) {
+    .contacto__titulo{
+        margin-bottom: 1rem;
+        .contacto__titulo__img{
+            width: 5%;
+        }
+        .contacto__titulo__h3{
+            width: 90%;
+
+        }
+    }
+}
+
+@media screen and ( max-width: 450px) {
+
+    .header__redes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        a.contacto__redes__in{
+            margin-bottom: 1rem;
+        }
+    }
+}
+//Fin contactos
+
+//Pagina error
+.error{
+    max-width: 87.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .error__info{
+        width: 50%;
+        margin: 0 2rem;
+        text-align: center;
+    }
+    div.error__info__boton{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+//error flex responsivo
+@media screen and ( max-width: 1280px) {
+    .error{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .error__info{
+            width: 80%;
+            margin: 0 2rem;
+            padding: 0 4rem;
+        }
+        div.error__info__boton{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }    
+    }
+}
+
+@media screen and ( max-width: 1118px) {
+    .error{
+        .error__info{
+            width: 80%;
+        }
+    }
+}
+
+@media screen and ( max-width: 763px) {
+    .error{
+        .error__info{
+            width: 100%;
+            margin: 0;
+            h2{
+                text-align: center;
+            }
+            p{
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+        }
+        div.error__info__boton{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }    
+        a{
+            margin: 1rem 0;
+        }
+    }
+}

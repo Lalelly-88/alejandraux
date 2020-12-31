@@ -1,0 +1,229 @@
+//Inicio de estilos sobre mi
+//sobre mi flex
+.sobremi__info__h2{
+    padding-bottom: 1rem;
+}
+.sobremi__info__p{
+    span{
+        font-weight: 600;
+    }
+}
+
+//sobre mi flex responsivo
+.sobremi__habilidades__titulo__h3{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 0.3rem $secundarios-azul solid;
+}
+
+@media screen and ( max-width: 1118px) {
+    .sobremi__info__h1{
+        font-size: 2rem;
+    }
+    .sobremi__info__h2{
+        font-size: 3.3rem;
+    }
+    .sobremi__info__p{
+        margin-top: 2rem;
+    }
+}
+
+//Estilos habilidades
+
+.sobremi__habilidades__items li{
+    padding: 1rem;
+    i.fa-check-circle{
+        font-size: 1rem;
+        padding-right: 0.5rem;
+        color: $secundarios-amarillo;
+    }
+}
+//Fin de estilos sobre mi
+
+
+//Inicio estilos experiencia y formacion
+//Experiencia
+
+.experiencia__mobileb{
+    display: none;
+}
+
+.experiencia__h3{
+    margin-top: 3rem;
+}
+.experiencia__elemento__contenedor{
+    @include caja;
+    .experiencia__elemento__img{
+        padding-bottom: 0.5rem;
+    }
+    .experiencia__elemento__h4{
+        padding-bottom: 1rem;
+        color: $branding-azul
+    }
+}
+
+
+//Estilos formacion
+.experiencia__elementof{
+    @include caja2;
+    .experiencia__elemento__img{
+        padding-bottom: 0.5rem;
+    }
+    .experiencia__elemento__h4{
+        padding-bottom: 1rem;
+        color: $branding-azul;
+        text-align: center;
+    }
+    .experiencia__elemento__p__fecha{
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and ( max-width: 850px) {
+    .experiencia__mobilef{
+        .experiencia__h3{
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .carousel-cell{
+            @include caja;
+            text-align: center;
+        
+            .experiencia__elemento__img{
+                padding-bottom: 0.5rem;
+            }
+            .experiencia__elemento__h4{
+                padding-bottom: 1rem;
+                color: $branding-azul
+            }
+        }
+    }   
+}
+
+
+//Estilos formacion
+.experiencia__titulo__h3{
+    margin-bottom: 3rem;
+    color: $branding-azul;
+    text-align: center;
+    border-bottom: 0.1rem $branding-amarillo solid;
+}
+
+.experiencia__elementop{
+    margin: 0 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and ( max-width: 850px) {
+    .experiencia__mobilep{
+        .experiencia__titulo__h3{
+            margin-top: 8rem;
+            margin-bottom: 3rem;
+            color: $branding-azul;
+            text-align: center;
+            border-bottom: 0.1rem $branding-amarillo solid;
+        }
+        .carousel-cell{
+            margin: 0 0.8rem;
+            text-align: center;
+        
+            .experiencia__elemento__img{
+                padding-bottom: 0.5rem;
+            }
+            .experiencia__elemento__h4{
+                padding-bottom: 1rem;
+                color: $branding-azul
+            }
+        }
+    }   
+}
+
+
+//Inicio Contacto
+.contacto__redes__in{
+    border-radius: 0.5rem;
+    padding: 2.3rem 3rem 1.8rem 3rem;
+    color: $blanco;
+    margin-right: 1.5rem;
+    background-color: $branding-azul;
+    i.fa-linkedin-in{
+        font-size: 2rem;
+    }
+}
+
+.contacto__redes__in:hover{
+    color: $blanco;
+    background-color: $secundarios-azul;
+    i.fa-behance:hover{
+        font-size: 2rem;
+    }
+}
+
+.contacto__redes__be{
+    border-radius: 0.5rem;
+    padding: 2.3rem 3rem 1.8rem 3rem;
+    color: $blanco;
+    margin-right: 1.5rem;
+    background-color: $branding-azul;
+    i.fa-behance{
+        font-size: 2rem;
+    }
+}
+
+.contacto__redes__be:hover{
+    color: $blanco;
+    background-color: $secundarios-azul;
+    i.fa-behance:hover{
+        font-size: 2rem;
+    }
+}
+
+@media screen and ( max-width: 1280px) {
+    .contacto__redes__be{
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+    .contacto__redes__in{
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+}
+@media screen and ( max-width: 450px) {
+    .contacto{
+        .header__redes{
+            width: 100%;
+            .contacto__redes__in, .contacto__redes__be{
+                width: 100%;
+                margin-bottom: 1rem;
+                padding: 1.3rem 3rem 1.3rem 3rem;
+            }
+        }
+        .contacto__info__p{
+            margin-top: 2rem;
+        }
+        div.contacto__formulario{
+            width: 100%;
+            padding: 2rem 2rem;
+        }    
+    }
+}
+
+//Fin contactos
+
+
+//Pagina error
+.error__info__h2{
+    margin-top: 3rem;
+}
+.error__info__p{
+    margin-top: 4rem;
+}
+
+@media screen and ( max-width: 1118px) {
+    .error__info__h2{
+        font-size: 3.3rem;
+    }
+    .error__info__p{
+        margin-top: 2rem;
+    }
+}

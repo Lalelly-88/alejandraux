@@ -1,0 +1,84 @@
+//sistema de colores
+$branding-amarillo: #FCC700;
+$branding-amarillo-transp: #FCC70050;
+$branding-azul: #203240;
+$secundarios-amarillo: #FFD545;
+$secundarios-azul: #3A5B6E;
+$secundarios-azul-transp: #3A5B6E70;
+$boolenaos-error: #A42202;
+$boolenaos-correcto: #325D41;
+$grises-negro: #0C0C0C;
+$grises-gris: #595959;
+$blanco: #FFFFFF;
+
+
+//sistema de tipografias
+@mixin tipo ($tamano, $grosor) {
+    font-size: $tamano;
+    font-weight: $grosor;
+}
+
+
+//sistema de botones
+@mixin boton ($tamano, $grosor, $colort, $fondo) {
+    font-size: $tamano;
+    font-weight: $grosor;
+    color: $colort;
+    background-color: $fondo;
+    border-radius: 0.5rem;
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+@mixin boton1 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $branding-azul;
+}
+
+@mixin boton3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $branding-azul;
+    background: transparent;
+    border: none;
+}
+
+//Cajas contenedoras
+@mixin caja {
+    width: 22rem;
+    margin: 2rem 2rem;
+    border: 0.1rem #C4C4C4 solid;
+    border-radius: 0.5rem;
+    background-color: $blanco;
+    padding: 2rem 3rem 2rem 3rem;
+}
+
+@mixin caja2 {
+    width: 22rem;
+    height: 18rem;
+    margin: 2rem 2rem;
+    border: 0.1rem #C4C4C4 solid;
+    border-radius: 0.5rem;
+    background-color: $blanco;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+//Cajas portafolio
+@mixin cajap ($ancho, $altura, $colort, $fondo) { 
+    width: $ancho;
+    height: $altura;
+    color: $colort;
+    border-radius: 0.5rem;
+    background-color: $fondo;
+    padding: 2rem 3rem 2rem 3rem;
+}
+
+@mixin cajap_mobile ($colort, $fondo) {
+    width: 22rem;
+    margin: 2rem 2rem;
+    color: $colort;
+    border-radius: 0.5rem;
+    background-color: $fondo;
+    padding: 2rem 3rem 2rem 3rem;
+}

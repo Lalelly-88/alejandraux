@@ -1,0 +1,407 @@
+@import 'estructura';
+@import 'variables';
+@import 'animaciones';
+@import 'estilos_secciones';
+@import 'estructura_secciones';
+
+
+// Estilos generales
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+h1{
+    color: $secundarios-azul;
+    @include tipo (2.5rem, 500)
+}
+h2{
+    color: $branding-azul;
+    @include tipo (4rem, 600) 
+}
+h3{
+    color: $branding-azul;
+    @include tipo (2.5rem, 500) 
+}
+h4{
+    @include tipo (2rem, 500) 
+}
+h5{
+    color: $secundarios-azul;
+    @include tipo (1.2rem, 600) 
+}
+p{
+    color: $branding-azul;
+    margin: 3.5rem 0 3.5rem 0;
+    @include tipo (1.5rem, 400) 
+}
+::placeholder{
+    font-family: 'Montserrat', sans-serif;
+    color: $grises-gris;
+    font-size: 1rem;
+}
+.boton1{
+    @include boton (1rem, 700, $branding-azul, $branding-amarillo);
+}
+.boton2{
+    @include boton (1rem, 700, $branding-amarillo, $branding-azul);
+}
+.boton3{
+    @include boton3;
+}
+
+
+
+//Estilos del header
+header{
+    background-color: $branding-amarillo;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    nav{
+        padding-top: 0.5rem;
+    }
+}
+
+.header__menu__items{
+    li{
+        margin-left: 2rem;
+    }
+    a{
+        color: $branding-azul;
+        @include tipo (1rem, 600)
+    }
+    a.activo {
+        color: $secundarios-azul;     
+    }
+}
+
+.header__redes__in{
+    color: $branding-azul;
+    margin-right: 1.5rem;
+
+    i.fa-linkedin-in{
+        font-size: 2rem;
+    }
+}
+
+.header__redes__be{
+    color: $branding-azul;
+    margin-right: 1.5rem;
+    i.fa-behance{
+        font-size: 2rem;
+    }
+}
+
+// Header responsivo
+@media screen and ( max-width: 1280px) {
+    header{
+        z-index: 1;
+        .header__div{
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav{
+            position: fixed;
+            left: -100%;
+            top: 0;
+            width: 70%;
+            height: 100vh;
+            background-color: $secundarios-amarillo; 
+            box-shadow: 0px 10px 20px -6px rgba(128, 128, 128, 0.8);
+            transition: left 0.5s;
+
+        }
+        #menu:target{
+            left: 0;
+        }
+        .header__menuh{
+            display: block;
+        }
+        .header__menuc{
+            display: block;
+            padding-top: 2rem;
+            padding-left: 3.7rem;
+            padding-bottom: 3rem;
+        }
+    }
+}
+
+
+//presentacion flex responsivo
+@media screen and ( max-width: 1118px) {
+    .presentacion__info__h1{
+        font-size: 2rem;
+    }
+    .presentacion__info__h2{
+        font-size: 3.3rem;
+    }
+    .presentacion__info__p{
+        margin-top: 2rem;
+    }
+}
+
+
+//Estilo de Experiencia laboral
+.experiencia__h3{
+    margin-top: 3rem;
+}
+
+.experiencia__elemento{
+    @include caja;
+    .experiencia__elemento__img{
+        padding-bottom: 0.5rem;
+    }
+    .experiencia__elemento__h4{
+        padding-bottom: 1rem;
+        color: $branding-azul
+    }
+}
+
+@media screen and ( max-width: 850px) {
+    .experiencia__mobile{
+        .experiencia__h3{
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .carousel-cell{
+            @include caja;
+        
+            .experiencia__elemento__img{
+                padding-bottom: 0.5rem;
+            }
+            .experiencia__elemento__h4{
+                padding-bottom: 1rem;
+                color: $branding-azul
+            }
+        }
+    }   
+}
+
+
+//Estilos habilidades
+.habilidades__h3{
+    margin-bottom: 1rem;
+}
+
+.habilidades__items li{
+    padding: 1rem;
+    i.fa-check-circle{
+        font-size: 1rem;
+        padding-right: 0.5rem;
+        color: $secundarios-amarillo;
+    }
+}
+
+//Responsivo habilidades
+@media screen and ( max-width: 940px) {
+    .habilidades{
+        background-color: $secundarios-amarillo;
+    .habilidades__btn{
+        margin: 0 4rem;
+        padding-bottom: 2rem;
+        .boton1{
+            width: 100%;
+            text-align: center;
+            @include boton (1rem, 700, $branding-amarillo, $branding-azul);
+        }
+        .boton1:hover {
+            @include boton (1rem, 700, $blanco, $secundarios-azul);
+        }
+    }
+    .habilidades__div{
+        padding-top: 2rem;
+    }
+        .habilidades__article img{
+            display: none;
+        }
+        .habilidades__items li{
+            i.fa-check-circle{
+                color: $secundarios-azul;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width: 400px) {
+    .habilidades__div{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .habilidades__h3{
+            margin-top: 2rem;
+        }
+    }
+}
+
+
+
+//Estilo Portafolio
+.portafolio__h3{
+    margin-bottom: 3rem;
+}
+
+.portafolio__elementos{
+    .portafolio__elemento1{
+        @include cajap (20rem, 32rem, $branding-azul, $branding-amarillo);
+        margin: 0.5rem 2rem;
+    }
+    .portafolio__elemento2{
+        @include cajap (26rem, 16rem, $branding-amarillo, $branding-azul);
+        margin-bottom: 1rem
+    }
+    .portafolio__elemento3{
+        @include cajap (26rem, 16rem, $branding-amarillo, $secundarios-azul);
+    }
+    .portafolio__elemento4{
+        @include cajap (20rem, 32rem, $branding-azul, $secundarios-amarillo);
+        margin: 0.5rem 2rem;
+    }
+    .portafolio__elemento__h4{
+        padding-bottom: 1rem;
+    }
+}
+
+//Responsivo portafolio
+@media screen and ( max-width: 1170px) {
+    .portafolio__elementos{
+        .portafolio__elemento1{
+            @include cajap (26rem, 16rem, $branding-azul, $branding-amarillo);
+            margin: 0.5rem 2rem;
+        }
+        .portafolio__elemento4{
+            @include cajap (26rem, 16rem, $branding-azul, $branding-amarillo);
+            margin: 0.5rem 2rem;
+        }
+    }
+    .portafolio__elemento__img{
+        display: none;
+    }
+}
+
+@media screen and ( max-width: 940px) {
+    .portafolio__elementos{
+        .portafolio__elemento1{
+            @include cajap (22rem, 12rem, $branding-azul, $branding-amarillo);
+            margin: 0.5rem 2rem;
+        }
+        .portafolio__elemento2{
+            @include cajap (22rem, 12rem, $branding-amarillo, $branding-azul);
+            margin-bottom: 1rem
+        }
+        .portafolio__elemento3{
+            @include cajap (22rem, 12rem, $branding-amarillo, $secundarios-azul);
+        }
+        .portafolio__elemento4{
+            @include cajap (22rem, 12rem, $branding-azul, $branding-amarillo);
+            margin: 0.5rem 2rem;
+        }
+    }
+}
+
+@media screen and ( max-width: 850px) {
+    .portafolio__elementos{
+        .portafolio__elemento1, .portafolio__elemento4{
+            margin: 0.5rem 0.5rem;
+        }
+        .portafolio__elementos2{
+            .portafolio__elemento2, .portafolio__elemento3{
+                margin: 0.5rem 0.5rem;
+            }
+        }
+    }
+}
+
+
+@media screen and ( max-width: 763px) {
+    section.portafolio__mobile{
+        .portafolio__h3{
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .carousel-cell.portafolio__a1{
+            @include cajap (22rem, 12rem, $branding-azul, $branding-amarillo);
+            margin: 0.5rem 2rem;
+            a h4, button{
+                color: $branding-azul;
+            }
+        }
+        .carousel-cell.portafolio__a2{
+            @include cajap (22rem, 12rem, $branding-amarillo, $branding-azul);
+            margin: 0.5rem 2rem;
+            a h4, button{
+                color: $branding-amarillo;
+            }
+        }
+        .carousel-cell.portafolio__a3{
+            @include cajap (22rem, 12rem, $branding-amarillo, $secundarios-azul);
+            margin: 0.5rem 2rem;
+            a h4, button{
+                color: $branding-amarillo;
+            }
+        }
+        .carousel-cell.portafolio__a4{
+            @include cajap (22rem, 12rem, $branding-azul, $branding-amarillo);
+            margin: 0.5rem 2rem;
+            a h4, button{
+                color: $branding-azul;
+            }
+        }
+    }       
+}
+
+
+//Estilos del Footer
+footer{
+    background-color: $branding-amarillo;
+    margin-top: 6rem;
+    .footer{
+        padding: 3rem 0;
+    }
+    h5{
+        margin-bottom: 1.5rem;
+    }
+    p{
+        margin: 0 0 2rem 0;
+    }
+}
+
+.footer__menu__items{
+    a{
+        color: $branding-azul;
+        @include tipo (1rem, 600)
+    }
+}
+
+.footer__redes__in{
+    color: $branding-azul;
+    margin-top: 1.5rem;
+    i.fa-linkedin-in{
+        font-size: 2rem;
+    }
+}
+
+.footer__redes__be{
+    color: $branding-azul;
+    margin-top: 1.5rem;
+
+    i.fa-behance{
+        font-size: 2rem;
+    }
+}
+
+

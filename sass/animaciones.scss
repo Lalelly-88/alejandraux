@@ -1,0 +1,170 @@
+// Animacion menu y el footer
+
+header, footer{
+    .header a.header__logo2 img:last-child, .footer a.footer__logo img:last-child{
+        display: none;  
+      }
+      a.header__logo2:hover img:last-child, a.footer__logo:hover img:last-child {
+        display: inline-block; 
+      }
+      a.header__logo2:hover img:first-child, a.footer__logo:hover img:first-child{
+        display: none;  
+      }
+}
+
+.header__menu__items li a, .footer__menu__items li a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: 0.7s all;
+    padding: 0 0 0.3rem 0;  
+}
+
+.header__menu__items li a:before, .footer__menu__items li a:before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    border-bottom: 7px solid $blanco;
+    bottom: 0;
+    right: 350px;
+    transition: 0.3s all;
+}
+
+.header__menu__items li a.activo:before{
+    border-bottom: 0px solid $blanco;
+}
+    .header__menu__items li a:hover:before, .footer__menu__items li a:hover:before{
+    right: 0;
+}
+
+@media screen and ( max-width: 1280px) {
+    .header__menu__items li a{
+        position: relative;
+        display: block;
+        overflow: hidden;
+        transition: 0.3s all;
+        padding: 0 0 0.3rem 0;  
+    }
+    .header__menu__items li a:before{
+        content: '';
+        width: 100%;
+        position: absolute;
+        border-bottom: 8px solid $blanco;
+        bottom: 0;
+        right: 560px;
+        transition: 0.3s all;
+    }
+        .header__menu__items li a:hover:before{
+        right: 21rem;
+    }
+}
+
+.header__redes__in:hover, .footer__redes__in:hover {
+        color: $secundarios-azul
+}
+
+.header__redes__be:hover, .footer__redes__be:hover {
+        color: $secundarios-azul
+}
+
+
+//Animaciones presentacion  
+.boton1:hover {
+    @include boton (1rem, 700, $branding-azul, $secundarios-amarillo);
+}
+
+.boton2:hover {
+    @include boton (1rem, 700, $blanco, $secundarios-azul);
+}
+.experiencia__elemento:hover{
+    border: none;
+    box-shadow: 0px 10px 20px -6px rgba(163, 163, 163, 0.8);
+}
+
+.experiencia__elementop:hover{
+    border: none;
+    box-shadow: 0px -5px 20px -10px rgba(163, 163, 163, 0.486);
+}
+
+
+// Animaciones experiencia
+// Animacion boton3 / tipo azul, efecto amarillo
+.experiencia__elemento button{
+    width: 5.5rem;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: 0.3s all;
+    padding: 0 0 0.3rem 0;  
+    cursor: pointer;
+}
+
+.experiencia__elemento button:before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    border-bottom: 8px solid $branding-amarillo;
+    bottom: 0;
+    right: 350px;
+    transition: 0.7s all;
+}
+    .experiencia__elemento button:hover:before{
+    right: 0;
+}
+
+// Animaciones portafolio
+// Animacion boton3 cuadrados azules / tipo amarilla, efecto amarillo
+.portafolio__elementos2 button{
+    width: 5.5rem;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: 0.3s all;
+    padding: 0 0 0.3rem 0; 
+    color: $branding-amarillo; 
+    cursor: pointer;
+}
+
+.portafolio__elementos2 button:before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    border-bottom: 8px solid $branding-amarillo;
+    bottom: 0;
+    right: 350px;
+    transition: 0.3s all;    
+}
+    .portafolio__elementos2 button:hover:before{
+    right: 0;
+}
+
+// Animacion boton3 cuadrados amarillo oscuro / tipo azul, efecto azul
+.portafolio__elemento1 button, .portafolio__elemento4 button{
+    width: 5.5rem;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: 0.3s all;
+    padding: 0 0 0.3rem 0; 
+    color: $branding-azul; 
+    cursor: pointer;
+}
+
+.portafolio__elemento1 button:before, .portafolio__elemento4 button:before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    border-bottom: 8px solid $branding-azul;
+    bottom: 0;
+    right: 350px;
+    transition: 0.3s all;
+}
+    .portafolio__elemento1 button:hover:before, .portafolio__elemento4 button:hover:before{
+    right: 0;
+}
+
+
+//Animacion cajas de portafolio
+.portafolio__elementos a:hover{
+    box-shadow: 0px 10px 20px -6px rgba(163, 163, 163, 0.863);
+}
